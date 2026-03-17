@@ -14,28 +14,22 @@ public class Main {
         library.addBook(book2);
         library.addBook(book3);
 
-        book1.printInfo();
-        book2.printInfo();
-        book3.printInfo();
-
-        reader1.printData();
-        reader2.printData();
-
-        reader1.increaseBorrowedCount();
-        reader1.printData();
-
-        reader1.decreaseBorrowedCount();
-        reader1.printData();
-
+        System.out.println("=== Available books before borrowing ===");
         library.printAvailableBooks();
 
-        Book foundBook = library.findBookByTitle("1984");
-        if (foundBook != null) {
-            System.out.println("Found book:");
-            foundBook.printInfo();
-        } else {
-            System.out.println("Book not found.");
-        }
+        System.out.println("=== Borrow book ===");
+        library.borrowBook("1984", reader1);
+        reader1.printData();
+
+        System.out.println("=== Available books after borrowing ===");
+        library.printAvailableBooks();
+
+        System.out.println("=== Return book ===");
+        library.returnBook("1984", reader1);
+        reader1.printData();
+
+        System.out.println("=== Available books after return ===");
+        library.printAvailableBooks();
 
         System.out.println("Available books count: " + library.countAvailableBooks());
     }

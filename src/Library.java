@@ -44,4 +44,36 @@ public class Library {
         }
         return count;
     }
+
+    public void borrowBook(String title, Reader reader) {
+        Book book = findBookByTitle(title);
+
+        if (book != null) {
+            if (book.isAvailable()) {
+                book.borrow();
+                reader.increaseBorrowedCount();
+                System.out.println("Borrowing completed: " + title);
+            } else {
+                System.out.println("Book is not available.");
+            }
+        } else {
+            System.out.println("Book not found.");
+        }
+    }
+
+    public void returnBook(String title, Reader reader) {
+        Book book = findBookByTitle(title);
+
+        if (book != null) {
+            if (!book.isAvailable()) {
+                book.returnBook();
+                reader.decreaseBorrowedCount();
+                System.out.println("Return completed: " + title);
+            } else {
+                System.out.println("Book is already available.");
+            }
+        } else {
+            System.out.println("Book not found.");
+        }
+    }
 }
