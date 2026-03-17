@@ -32,4 +32,14 @@ public class Book {
         available = true;
         System.out.println(title + " returned");
     }
+
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
 }
