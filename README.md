@@ -21,3 +21,10 @@ Methods:
 
 ### Main
 Creates several book objects and demonstrates their behavior.
+
+## Tasks
+
+- Task 1: Created Book class and basic functionality
+- Task 2: Added Reader class and methods
+- Task 3: Implemented Library class with book storage
+- Task 4: Implemented borrowing and returning logic with test scenario
