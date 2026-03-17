@@ -5,14 +5,20 @@ public class Main {
         Book book2 = new Book("Clean Code", "Robert Martin", 450, true);
         Book book3 = new Book("Java Basics", "John Doe", 200, true);
 
+        Reader reader1 = new Reader("Fatih", "Korap", "R001", 0);
+        Reader reader2 = new Reader("Ewelina", "Izdebska", "R002", 0);
+
         book1.printInfo();
         book2.printInfo();
         book3.printInfo();
 
-        book1.borrow();
-        book1.printInfo();
+        reader1.printData();
+        reader2.printData();
 
-        book1.returnBook();
-        book1.printInfo();
+        reader1.increaseBorrowedCount();
+        reader1.printData();
+
+        reader1.decreaseBorrowedCount();
+        reader1.printData();
     }
 }
